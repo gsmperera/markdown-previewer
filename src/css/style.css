@@ -1,0 +1,9 @@
+body {
+  min-height: 100vh;
+}
+
+textarea {
+  outline: none;
+  resize: none;
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,8 +1,10 @@
 import React from 'react';
 
 import defaultText from './defaultText';
-import Editor from './Editor/Editor';
-import Preview from './Preview/Preview';
+import Header from './Header';
+import Editor from './Editor';
+import Preview from './Preview';
+import Footer from './Footer';
 
 class App extends React.Component {
     constructor(props) {
@@ -12,6 +14,7 @@ class App extends React.Component {
         }
 
         this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleClearButton = this.handleClearButton.bind(this);
     }
     
     handleInputChange(event) {
@@ -20,37 +23,35 @@ class App extends React.Component {
         });
     }
 
+    handleClearButton() {
+        this.setState({
+            inputText: '',
+        });
+    }
+
     render() {
         return (
-                <>
-                    <div className="container-fluid p-4">
-                        <h1 className='text-center text-primary'>Markdown Previewer</h1>
-                    </div>
-                    <div className="container pb-3">
-                        <div className="row">
-                            <Editor text={this.state.inputText} handleInput={this.handleInputChange}/>
+            <div id='app-container' className="container d-flex flex-column justify-content-between p-0">
+                    
+                {/*Header Section*/}
+                <div className="container-fluid p-0">
+                    <Header />
+                </div>
+                
+                {/*Edit and Preview Section*/}
+                <div className="container-fluid flex-fill d-flex row align-items-stretch m-0 p-0">
+                        <div className="col-md-6 d-flex align-items-stretch p-0">
+                            <Editor text={this.state.inputText} handleInput={this.handleInputChange} handleClear={this.handleClearButton} />
+                        </div>
+                        <div className="col-md-6 d-flex align-items-stretch p-0">
                             <Preview markdownText={this.state.inputText}/>
                         </div>
-                    </div>
-                </>
-                );
+                </div>
+
+                <Footer />
+            </div>
+        );
     }
 }
-
-// function App() {
-//     return (
-//         <>
-//             <div className="container-fluid p-4">
-//                 <h1 className='text-center text-primary'>Markdown Previewer</h1>
-//             </div>
-//             <div className="container">
-//                 <div className="row">
-//                     <Editor />
-//                     <Preview />
-//                 </div>
-//             </div>
-//         </>
-//     );
-// }
 
 export default App;

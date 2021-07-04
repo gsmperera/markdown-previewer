@@ -18,5 +18,4 @@
 
 -   mobile view
 
-<img src='./images/mobile-ss.jpg' alt='mobile screenshot' width='20%' />
-<img src='./images/mobile-ss-kb.jpg' alt='mobile screenshot with keyboard' width='20%' />
+<img src='./images/mobile-ss.jpg' alt='mobile screenshot' width='20%' /> <img src='./images/mobile-ss-kb.jpg' alt='mobile screenshot with keyboard' width='20%' />

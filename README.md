@@ -7,6 +7,7 @@
 ## Technology Used
 
 -   Reactjs
+-   Bootstrap
 -   Marked JavaScript library
 -   DOMPurify JavaScript library
 
